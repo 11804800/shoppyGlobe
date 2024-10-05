@@ -1,28 +1,31 @@
 import useFetch from "../utils/useFetch";
-import Loading from "./Loading";
+import ProductItem from "./ProductItem";
 
 const ProductList = () => {
+
+  //   Calling the custom hook useFetch which will fetch the data from the store
   const { data, loading, err } = useFetch("https://dummyjson.com/products");
-  console.log(data)
-  if(loading)
-  {
-    return <Loading/>
+
+
+  // when the useFetch is loading
+  if (loading) {
+    return <div className="loading">Loading ...</div>;
   }
-  else if(err)
-  {
-    return (
-        <div>
-            {err.message}
-        </div>
-    )
+  //when the useFetch returns error
+  else if (err) {
+    return <div className="fetch-error">{err.message}</div>;
   }
-  else if(data)
-  {
+  //when it return the data without any error
+  else if (data) {
     return (
-        <div>
-            Product data
-        </div>
-    )
+      <div className="product-container">
+        {/* //mapping over the data  */}
+        {data?.products.map((item) => {
+            // passing the props product single item to product item key for giving unique key
+          return <ProductItem key={item?.id} item={item} />;
+        })}
+      </div>
+    );
   }
 };
 export default ProductList;
