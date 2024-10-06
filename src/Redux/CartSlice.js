@@ -9,10 +9,13 @@ const CartSlice = createSlice({
   initialState: initialState,
   reducers: {
     AddToCart: (state, action) => {
+        //for adding the cart item to cart
       state.value.push(action.payload);
     },
     RemoveFromCart: (state, action) => {
-      state.value.slice(action.payload, 1);
+        //for removig the cart item from cart
+        //it takes the index as an argument
+        state.value.splice(action.payload, 1);
     },
   },
 });

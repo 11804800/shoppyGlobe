@@ -21,7 +21,6 @@ const Cart = () => {
       <div className="cart-container">
         <div className="Cart">
           <h1>Shopping Cart</h1>
-          <p>Price</p>
         </div>
         <hr />{" "}
         {data.length == 0 ? (
