@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 const HeaderComponent = () => {
@@ -18,6 +19,11 @@ const HeaderComponent = () => {
         alert("Searched  "+search);
     }
   }
+
+  //getting the cart data from store
+  const Cart = useSelector((state) => {
+    return state.cart.value;
+  });
 
   return (
 
@@ -52,7 +58,7 @@ const HeaderComponent = () => {
           <Link to="/cart" className="cart-link nav-links">
             <img src="/cart.png" width="35" className="cart-img" />
             Cart
-            <span className="cart-item-count">0</span>
+            <span className="cart-item-count">{Cart?.length}</span>
           </Link>
         </div>
       </div>
