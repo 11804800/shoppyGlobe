@@ -58,6 +58,7 @@ export default function ProductItem(props) {
           ${props.item?.price}{" "}
           <span>({props.item?.discountPercentage}% off)</span>
         </p>
+        {/* button to add the item to the cart */}
         <button className="add-to-cart-btn" onClick={PushToCart}>
           Add to Cart
         </button>

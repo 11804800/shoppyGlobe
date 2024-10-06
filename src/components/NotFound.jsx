@@ -2,6 +2,7 @@ import { Link, useRouteError } from "react-router-dom";
 
 function NotFound() {
 
+//it is hook provided by react router dom to get the route error info
   const err = useRouteError();
 
   return (

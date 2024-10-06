@@ -21,6 +21,7 @@ const CartItem = (props) => {
   //FUNCTION:For decreseing the quantity
   //it check if the value is less than the minimum quantity required to buy the product
   function MinusQuantity() {
+    //if the count which is quantity is more than equal to the product minimum order quantity it will decrese else alert message will popup
     if (count >= props.item?.minimumOrderQuantity) {
       setCount(count--);
     } else {
@@ -63,6 +64,7 @@ const CartItem = (props) => {
           <span>({props.item?.discountPercentage}% off)</span>
         </p>
         <div className="quantity">
+          {/* //for increasing the product quantity */}
           <button
             className="increase-btn"
             onClick={() => {
@@ -71,11 +73,14 @@ const CartItem = (props) => {
           >
             <FaPlus />
           </button>
+          {/* showing the count */}
           {count}
+          {/* for decresing the product quantity */}
           <button className="decrease-btn" onClick={MinusQuantity}>
             <FaMinus />
           </button>
         </div>
+        {/* /for removing the cart item */}
         <button className="remove-btn" onClick={RemoveItem}>
           Remove
         </button>

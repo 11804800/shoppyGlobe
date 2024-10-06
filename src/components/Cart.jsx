@@ -8,9 +8,9 @@ const Cart = () => {
     return state.cart.value;
   });
 
-  console.log(data);
   return (
     <div className="container" style={{ background: "rgb(234, 237, 237)" }}>
+      {/* //back to home navigation and where is the user  will get the data and link to go back to home */}
       <div className="breadcrumb-container">
         <Link to="/" className="breadcrumb-link">
           <FaArrowLeft size={12} />

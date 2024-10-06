@@ -27,8 +27,11 @@ const Search = (props) => {
           </Link>
           /<p>Search</p>/{params?.name}
         </div>
-        <p className="search">Showing {data.products.length}+ Results for {params?.name}</p>
+        <p className="search">
+          Showing {data.products.length}+ Results for {params?.name}
+        </p>
         <div className="product-container">
+          {/* if no data is found it will show that not data is found */}
           {data?.products.length == 0 ? (
             <div className="No-CartItem">
               <h1 className="no-product-heading">
@@ -39,6 +42,7 @@ const Search = (props) => {
               </Link>
             </div>
           ) : (
+            // else the product list
             data?.products.map((item) => {
               // passing the props product single item to product item key for giving unique key
               return <ProductItem key={item?.id} item={item} />;
