@@ -89,6 +89,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
+  padding: 14px 8px;
 }
 
 .search-input {
@@ -98,7 +99,8 @@
   width: 80%;
   outline: none;
   height: 40px;
-  border: none;
+  border: 1px solid black;
+  border-right:none;
 }
 
 .Search-btn {
@@ -109,6 +111,14 @@
   color: white;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+}
+
+.search
+{
+  padding: 8px 23px;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:rgba(0, 0, 0, 0.7)
 }
 
 /* Nav Links */
@@ -498,6 +508,12 @@
   display: none;
 }
 
+.no-product-heading
+{
+  width:100%;
+  text-align: center;
+}
+
 /*================================================= Cart Component ===============================*/
 .cart-container {
   width: 70%;
@@ -751,5 +767,10 @@
 
   .No-CartItem {
     height: 320px;
+  }
+
+  .no-product-heading
+  {
+    width:320px;
   }
 }

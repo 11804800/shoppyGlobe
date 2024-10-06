@@ -3,7 +3,7 @@ import App from "../App";
 import NotFound from "../components/NotFound";
 import { lazy, Suspense } from "react";
 import Loading from "../components/Loading";
-
+import Search from "../components/Search";
 
 const ProductList = lazy(() => import("../components/ProductList"));
 const Cart = lazy(() => import("../components/Cart"));
@@ -38,6 +38,14 @@ const BrowseRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <ProductDetails />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/search/:name",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Search />
           </Suspense>
         ),
       },

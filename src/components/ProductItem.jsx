@@ -40,6 +40,7 @@ export default function ProductItem(props) {
           src={props?.item?.thumbnail}
           alt={props.item?.title}
           className="product-thumbnail"
+          loading="lazy"
         />
       </div>
       <div className="product-card-body">

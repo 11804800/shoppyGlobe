@@ -16,7 +16,7 @@ const HeaderComponent = () => {
   {
     if(search)
     {
-        alert("Searched  "+search);
+        route(`/search/${search}`);
     }
   }
 

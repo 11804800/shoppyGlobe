@@ -4,7 +4,8 @@ import ProductItem from "./ProductItem";
 const ProductList = () => {
 
   //   Calling the custom hook useFetch which will fetch the data from the store
-  const { data, loading, err } = useFetch("https://dummyjson.com/products");
+  //it will get all the products
+  const { data, loading, err } = useFetch("https://dummyjson.com/products?limit=0");
 
 
   // when the useFetch is loading
@@ -19,6 +20,7 @@ const ProductList = () => {
   else if (data) {
     return (
       <div className="product-container">
+        
         {/* //mapping over the data  */}
         {data?.products.map((item) => {
             // passing the props product single item to product item key for giving unique key
